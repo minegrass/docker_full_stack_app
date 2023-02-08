@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  react:
+    build: ./react/my-app
+    volumes: 
+      - ./react/my-app:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+  express:
+    build: ./express
+    volumes: 
+      - ./express:/app
+      - /app/node_modules
+    ports:
+      - 3001:3001
