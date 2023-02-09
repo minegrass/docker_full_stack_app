@@ -1,7 +1,14 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_EXPRESS_URL}/data`)
+      .then((result) => result.json())
+      .then((json) => {
+        console.log(json);
+      });
+  }, []);
+
   return (
     <div className="App">
       <div>
